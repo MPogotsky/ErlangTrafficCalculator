@@ -12,7 +12,7 @@ Model Erlanga B, znana również jako formuła straty Erlanga. Jest to najprosts
 
 Dla obliszenia współczynnika blokady w programie jest wykorzystywany wzor rekurencyjny:
 
-![image](https://user-images.githubusercontent.com/60144533/140705531-91d88d03-b915-4c38-9ce1-535beee2f500.png)
+![image](https://user-images.githubusercontent.com/60144533/140714471-1c885024-bb55-4d85-b664-98b58b41cb62.png)
 
 Gdzie:
 * P(A,N) - prawdopodobieństwo blokady
