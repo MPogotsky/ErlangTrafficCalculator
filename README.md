@@ -12,7 +12,7 @@ Model Erlanga B, znana również jako formuła straty Erlanga. Jest to najprosts
 
 Dla obliszenia współczynnika blokady w programie jest wykorzystywany wzor rekurencyjny:
 
-![image](https://user-images.githubusercontent.com/60144533/140705531-91d88d03-b915-4c38-9ce1-535beee2f500.png)
+![image](https://user-images.githubusercontent.com/60144533/140714471-1c885024-bb55-4d85-b664-98b58b41cb62.png)
 
 Gdzie:
 * P(A,N) - prawdopodobieństwo blokady
@@ -23,3 +23,9 @@ Gdzie:
 * Niezależne generowanie żądań przez źródła (abonenci nie decydują, że będą razem dzwonić o ustalonej porze),
 * Czas obsługi żądania (n.p. rozmowy telefonicznej) ma rozkład wykładniczy,
 * Obsługa ma charakter FIFO (First In First Out) – żądania obsługuje się w kolejności ich przychodzenia.
+
+# Literatura
+1. [EN] Wikipedia.org, Erlang(unit): Erlang B formula, od dnia 23.09.2021.
+    https://en.wikipedia.org/wiki/Erlang_(unit)#Erlang_B_formula
+2. [PL] Wikipedia.org, Model Erlanga: Model Erlang B, od dnia 07.07.2018.
+    https://pl.wikipedia.org/wiki/Model_Erlanga
