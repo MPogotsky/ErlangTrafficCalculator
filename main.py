@@ -1,8 +1,14 @@
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def erlang_model_B(A, N):
+    if N == 0:
+        return 1
+    else:
+        return (A * erlang_model_B(A, N - 1)) / (A * erlang_model_B(A, N - 1) + N)
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    average_traffic = int(input('Please, enter the average traffic value in erlangs: '))
+    lines = int(input('Please, enter the number of lines: '))
+    probability_of_blocking = round(erlang_model_B(average_traffic, lines), 3)
+    print(f'The probability of blocking is : {probability_of_blocking}')
+
+
