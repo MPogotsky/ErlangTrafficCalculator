@@ -23,3 +23,9 @@ Gdzie:
 * Niezależne generowanie żądań przez źródła (abonenci nie decydują, że będą razem dzwonić o ustalonej porze),
 * Czas obsługi żądania (n.p. rozmowy telefonicznej) ma rozkład wykładniczy,
 * Obsługa ma charakter FIFO (First In First Out) – żądania obsługuje się w kolejności ich przychodzenia.
+
+# Literatura
+1. [EN] Wikipedia.org, Erlang(unit): Erlang B formula, od dnia 23.09.2021.
+    https://en.wikipedia.org/wiki/Erlang_(unit)#Erlang_B_formula
+2. [PL] Wikipedia.org, Model Erlanga: Model Erlang B, od dnia 07.07.2018.
+    https://pl.wikipedia.org/wiki/Model_Erlanga
