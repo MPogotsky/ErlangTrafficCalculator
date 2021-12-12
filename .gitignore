@@ -1,2 +1,6 @@
 
 .idea/
+
+src/__pycache__/UI.cpython-39.pyc
+
+src/__pycache__/ErlangModel.cpython-39.pyc
