@@ -4,7 +4,7 @@ from Calculator import Calculator
 if __name__ == '__main__':
     window = Tk()
     window.title('Erlang calculator')
-    window.geometry("400x300+10+10")
+    window.geometry("400x350+10+10")
 
     main_window_label = Label(window, text='Main menu', font="Helvetica 16 bold")
     main_window_label.pack(pady=50)
