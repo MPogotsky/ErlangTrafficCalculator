@@ -22,5 +22,4 @@ class ErlangModelB:
             probability_of_blocking = round(self.__erlang_model_B(average_traffic, number_of_lines), 3)
             probabilities_of_blocking.append(probability_of_blocking)
 
-        print("ReTURNING")
         return probabilities_of_blocking

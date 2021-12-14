@@ -54,6 +54,7 @@ class Calculator:
             number_of_lines = getdouble(self.__number_of_lines_text_field.get())
 
         result = str(erlang_model_b.calculateProbabilityOfBlocking(average_traffic, number_of_lines))
+        result = result.translate({ord(i) : None for i in '[]'})
         self.__result_text_field.insert(0, result)
 
     def __check_string_for_a_delimeter(self, string_field):
