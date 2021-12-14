@@ -1,5 +1,5 @@
 from tkinter import *
-from src import ErlangModel
+from src.ErlangModel import ErlangModelB
 
 
 def clearWindow(window):
@@ -34,9 +34,11 @@ class Calculator:
         self.__result_text_field.pack()
 
     def calculateTheResult(self):
+        erlang_model_b = ErlangModelB()
+
         self.__result_text_field.delete(0, 'end')
         average_traffic = getdouble(self.__average_traffic_text_field.get())
         number_of_lines = getdouble(self.__number_of_lines_text_field.get())
         self.__result_text_field.insert(0,
-                                        str(ErlangModel.calculateProbabilityOfBlocking(average_traffic,
-                                                                                       number_of_lines)))
+                                        str(erlang_model_b.calculateProbabilityOfBlocking(average_traffic,
+                                                                                          number_of_lines)))
