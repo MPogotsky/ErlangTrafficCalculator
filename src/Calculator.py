@@ -43,15 +43,15 @@ class Calculator:
 
         if self.__check_string_for_a_delimeter(average_traffic_string_field) is True:
             min_value, max_value = average_traffic_string_field.split("-")
-            average_traffic = [getdouble(min_value), getdouble(max_value)]
+            average_traffic = [getint(min_value), getint(max_value)]
         else:
-            average_traffic = getdouble(self.__average_traffic_text_field.get())
+            average_traffic = getint(self.__average_traffic_text_field.get())
 
         if self.__check_string_for_a_delimeter(number_of_lines_string_field) is True:
             min_value, max_value = number_of_lines_string_field.split("-")
-            number_of_lines = [getdouble(min_value), getdouble(max_value)]
+            number_of_lines = [getint(min_value), getint(max_value)]
         else:
-            number_of_lines = getdouble(self.__number_of_lines_text_field.get())
+            number_of_lines = getint(self.__number_of_lines_text_field.get())
 
         result = str(erlang_model_b.calculateProbabilityOfBlocking(average_traffic, number_of_lines))
         result = result.translate({ord(i) : None for i in '[]'})
