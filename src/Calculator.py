@@ -2,7 +2,6 @@ from tkinter import *
 from src.ErlangModel import ErlangModelB
 
 
-
 def clearWindow(window):
     for widgets in window.winfo_children():
         widgets.destroy()

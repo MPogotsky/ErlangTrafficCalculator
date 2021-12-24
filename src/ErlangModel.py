@@ -3,13 +3,18 @@ from plot.PlotProbability import Graph
 
 class ErlangModelB:
     def __init__(self):
+        self.memo = {}
         pass
 
     def __erlang_model_B(self, A, N):
         if N == 0:
             return 1
+        elif self.memo.get(N):
+            return self.memo[N]
         else:
-            return (A * self.__erlang_model_B(A, N - 1)) / (A * self.__erlang_model_B(A, N - 1) + N)
+            result = (A * self.__erlang_model_B(A, N - 1)) / (A * self.__erlang_model_B(A, N - 1) + N)
+            self.memo[N] = result
+            return result
 
     def __expand_amount_of_probes(self, array):
         first_value = array[0]
