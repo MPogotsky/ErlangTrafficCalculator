@@ -1,5 +1,6 @@
 from tkinter import *
 from Calculator import Calculator
+from plot import PlotProbability
 
 if __name__ == '__main__':
     window = Tk()

@@ -1,3 +1,6 @@
+from plot.PlotProbability import Graph
+
+
 class ErlangModelB:
     def __init__(self):
         pass
@@ -19,13 +22,19 @@ class ErlangModelB:
 
     def calculateProbabilityOfBlocking(self, average_traffic, number_of_lines):
         probabilities_of_blocking = []
+        x_values_for_plot = []
+        x_axis_name = ""
         if isinstance(average_traffic, list):
             average_traffic = self.__expand_amount_of_probes(average_traffic)
+            x_values_for_plot = average_traffic
+            x_axis_name = "Average traffic [Erlang]"
             for traffic in average_traffic:
                 probability_of_blocking = round(self.__erlang_model_B(traffic, number_of_lines), 3)
                 probabilities_of_blocking.append(probability_of_blocking)
         elif isinstance(number_of_lines, list):
             number_of_lines = self.__expand_amount_of_probes(number_of_lines)
+            x_values_for_plot = number_of_lines
+            x_axis_name = "Number of lines"
             for line in number_of_lines:
                 probability_of_blocking = round(self.__erlang_model_B(average_traffic, line), 3)
                 probabilities_of_blocking.append(probability_of_blocking)
@@ -33,4 +42,6 @@ class ErlangModelB:
             probability_of_blocking = round(self.__erlang_model_B(average_traffic, number_of_lines), 3)
             probabilities_of_blocking.append(probability_of_blocking)
 
+        if x_values_for_plot:
+            Graph(x_values_for_plot, x_axis_name,probabilities_of_blocking)
         return probabilities_of_blocking
