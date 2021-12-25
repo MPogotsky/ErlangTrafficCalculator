@@ -34,6 +34,7 @@ class ErlangModelB:
             x_values_for_plot = average_traffic
             x_axis_name = "Average traffic [Erlang]"
             for traffic in average_traffic:
+                self.memo = {}
                 probability_of_blocking = round(self.__erlang_model_B(traffic, number_of_lines), 3)
                 probabilities_of_blocking.append(probability_of_blocking)
         elif isinstance(number_of_lines, list):
@@ -48,5 +49,5 @@ class ErlangModelB:
             probabilities_of_blocking.append(probability_of_blocking)
 
         if x_values_for_plot:
-            Graph(x_values_for_plot, x_axis_name,probabilities_of_blocking)
+            Graph(x_values_for_plot, x_axis_name, probabilities_of_blocking)
         return probabilities_of_blocking
