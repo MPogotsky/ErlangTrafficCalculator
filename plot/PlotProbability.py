@@ -14,12 +14,12 @@ class Graph:
     def __graphWindow(self):
         window = Tk()
         window.title('Probability of blocking')
-        window.geometry("600x550")
+        window.geometry("708x766")
         self.__plotGraph(window)
         window.mainloop()
 
     def __plotGraph(self, window):
-        figure = Figure(figsize=(6, 5), dpi=100)
+        figure = Figure(figsize=(7, 7), dpi=100)
         plot_graph = figure.add_subplot(111)
 
         plot_graph.plot(self.x_values, self.y_values)
