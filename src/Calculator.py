@@ -16,9 +16,9 @@ class Calculator:
         self.__result_text_field = Entry()
         self.__special_character = "-"
 
-        self.calculatorWindow(parent)
+        self.createWindow(parent)
 
-    def calculatorWindow(self, parent):
+    def createWindow(self, parent):
         average_traffic_label = Label(self.window, text='Average traffic in Erlangs')
         average_traffic_label.pack(pady=20)
         self.__average_traffic_text_field.pack()
