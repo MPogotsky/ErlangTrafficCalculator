@@ -8,7 +8,7 @@ def clearWindow(window):
 
 
 class Calculator:
-    def __init__(self, window):
+    def __init__(self, parent, window):
         clearWindow(window)
         self.window = window
         self.__average_traffic_text_field = Entry(bd=3)
@@ -16,9 +16,9 @@ class Calculator:
         self.__result_text_field = Entry()
         self.__special_character = "-"
 
-        self.calculatorWindow()
+        self.calculatorWindow(parent)
 
-    def calculatorWindow(self):
+    def calculatorWindow(self, parent):
         average_traffic_label = Label(self.window, text='Average traffic in Erlangs')
         average_traffic_label.pack(pady=20)
         self.__average_traffic_text_field.pack()
@@ -29,6 +29,9 @@ class Calculator:
 
         calculate_button = Button(self.window, text='Calculate', command=self.calculateTheResult)
         calculate_button.pack(pady=20)
+
+        back_button = Button(self.window, text='Back', command=lambda: self.__back_to_main(parent))
+        back_button.pack(pady=20)
 
         prob_of_blocking_label = Label(self.window, text='Probability of blocking')
         prob_of_blocking_label.pack()
@@ -62,3 +65,7 @@ class Calculator:
             return True
         else:
             return False
+
+    def __back_to_main(self, parent):
+        clearWindow(self.window)
+        parent(self.window)
