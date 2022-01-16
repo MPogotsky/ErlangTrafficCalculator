@@ -15,13 +15,13 @@ class Information:
         self.createWindow(parent)
 
     def createWindow(self, parent):
-        v1 = pdf.ShowPdf()
-        v2 = v1.pdf_view(self.window, pdf_location=r"description.pdf", width=100, height=50)
+        pdf_frame = pdf.ShowPdf()
+        pdf_window = pdf_frame.pdf_view(self.window, pdf_location=r"description.pdf", width=100, height=50)
 
         back_button = Button(self.window, text='Back', command=lambda: self.__back_to_main(parent))
         back_button.pack(pady=20)
 
-        v2.pack()
+        pdf_window.pack()
 
     def __back_to_main(self, parent):
         clearWindow(self.window)
