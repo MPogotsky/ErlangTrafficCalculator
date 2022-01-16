@@ -1,4 +1,3 @@
-import tkinter
 from tkinter import *
 from src.Calculator import Calculator
 from src.Information import Information
