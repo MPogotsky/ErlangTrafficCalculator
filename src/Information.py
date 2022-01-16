@@ -1,5 +1,6 @@
 from tkinter import *
-from tkPDFViewer import tkPDFViewer as pdf
+from tkhtmlview import HTMLLabel
+import codecs
 
 
 def clearWindow(window):
@@ -15,13 +16,16 @@ class Information:
         self.createWindow(parent)
 
     def createWindow(self, parent):
-        pdf_frame = pdf.ShowPdf()
-        pdf_window = pdf_frame.pdf_view(self.window, pdf_location=r"description.pdf", width=100, height=50)
 
-        back_button = Button(self.window, text='Back', command=lambda: self.__back_to_main(parent))
-        back_button.pack(pady=20)
+        html_file = codecs.open("dependency/help.htm", "r").read()
 
-        pdf_window.pack()
+        html_view = HTMLLabel(self.window, html=html_file)
+
+        back_button = Button(self.window, text='Back', height=1, width=6, command=lambda: self.__back_to_main(parent))
+        back_button.pack(side=BOTTOM, pady=3)
+
+        html_view.fit_height()
+        html_view.pack(pady=3, expand=True)
 
     def __back_to_main(self, parent):
         clearWindow(self.window)
