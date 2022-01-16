@@ -1,0 +1,8 @@
+
+.idea/
+
+src/__pycache__/
+
+plot/__pycache__/
+
+*.pyc
