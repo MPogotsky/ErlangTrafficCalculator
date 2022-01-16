@@ -12,7 +12,7 @@ def controller(window):
                                command=lambda: Calculator(controller, window))
     calculator_button.pack(pady=5)
 
-    information_button = Button(window, text='Information', height=3, width=20,
+    information_button = Button(window, text='Help', height=3, width=20,
                                 command=lambda: Information(controller, window))
     information_button.pack(pady=5)
 

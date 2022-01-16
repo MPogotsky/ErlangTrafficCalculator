@@ -31,11 +31,11 @@ class Calculator:
         calculate_button.pack(pady=20)
 
         back_button = Button(self.window, text='Back', command=lambda: self.__back_to_main(parent))
-        back_button.pack(pady=20)
 
         prob_of_blocking_label = Label(self.window, text='Probability of blocking')
         prob_of_blocking_label.pack()
         self.__result_text_field.pack()
+        back_button.pack(pady=20)
 
     def calculateTheResult(self):
         erlang_model_b = ErlangModelB()
