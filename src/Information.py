@@ -12,7 +12,7 @@ class Information:
     def __init__(self, parent, window):
         clearWindow(window)
         self.window = window
-        self.window.geometry("610x750+10+10")
+        self.window.geometry("900x750+10+10")
         self.createWindow(parent)
 
     def createWindow(self, parent):
