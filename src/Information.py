@@ -1,21 +1,17 @@
 from tkinter import *
 from tkhtmlview import HTMLLabel
+from src.ClearWindow import clear_window
 import codecs
-
-
-def clearWindow(window):
-    for widgets in window.winfo_children():
-        widgets.destroy()
 
 
 class Information:
     def __init__(self, parent, window):
-        clearWindow(window)
+        clear_window(window)
         self.window = window
         self.window.geometry("900x750+10+10")
-        self.createWindow(parent)
+        self.__create_window(parent)
 
-    def createWindow(self, parent):
+    def __create_window(self, parent):
 
         html_file = codecs.open("dependency/help.htm", "r").read()
 
@@ -28,6 +24,6 @@ class Information:
         html_view.pack(pady=3, expand=True)
 
     def __back_to_main(self, parent):
-        clearWindow(self.window)
+        clear_window(self.window)
         self.window.geometry("500x450+10+10")
         parent(self.window)

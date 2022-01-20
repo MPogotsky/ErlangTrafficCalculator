@@ -1,24 +1,20 @@
 from tkinter import *
 from src.ErlangModel import ErlangModelB
-
-
-def clearWindow(window):
-    for widgets in window.winfo_children():
-        widgets.destroy()
+from src.ClearWindow import clear_window
 
 
 class Calculator:
     def __init__(self, parent, window):
-        clearWindow(window)
+        clear_window(window)
         self.window = window
         self.__average_traffic_text_field = Entry(bd=3)
         self.__number_of_lines_text_field = Entry(bd=3)
         self.__result_text_field = Entry()
         self.__special_character = "-"
 
-        self.createWindow(parent)
+        self.__create__window(parent)
 
-    def createWindow(self, parent):
+    def __create__window(self, parent):
         average_traffic_label = Label(self.window, text='Average traffic in Erlangs')
         average_traffic_label.pack(pady=20)
         self.__average_traffic_text_field.pack()
@@ -27,7 +23,7 @@ class Calculator:
         number_of_lines_label.pack(pady=20)
         self.__number_of_lines_text_field.pack()
 
-        calculate_button = Button(self.window, text='Calculate', command=self.calculateTheResult)
+        calculate_button = Button(self.window, text='Calculate', command=self.__calculate__the__result)
         calculate_button.pack(pady=20)
 
         back_button = Button(self.window, text='Back', command=lambda: self.__back_to_main(parent))
@@ -37,7 +33,7 @@ class Calculator:
         self.__result_text_field.pack()
         back_button.pack(pady=20)
 
-    def calculateTheResult(self):
+    def __calculate__the__result(self):
         erlang_model_b = ErlangModelB()
 
         self.__result_text_field.delete(0, 'end')
@@ -56,7 +52,7 @@ class Calculator:
         else:
             number_of_lines = getint(self.__number_of_lines_text_field.get())
 
-        result = str(erlang_model_b.calculateProbabilityOfBlocking(average_traffic, number_of_lines))
+        result = str(erlang_model_b.calculate_probability_of_blocking(average_traffic, number_of_lines))
         result = result.translate({ord(i): None for i in '[]'})
         self.__result_text_field.insert(0, result)
 
@@ -67,5 +63,5 @@ class Calculator:
             return False
 
     def __back_to_main(self, parent):
-        clearWindow(self.window)
+        clear_window(self.window)
         parent(self.window)

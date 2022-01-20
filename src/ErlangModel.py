@@ -25,7 +25,7 @@ class ErlangModelB:
             position += 1
         return array
 
-    def calculateProbabilityOfBlocking(self, average_traffic, number_of_lines):
+    def calculate_probability_of_blocking(self, average_traffic, number_of_lines):
         probabilities_of_blocking = []
         x_values_for_plot = []
         x_axis_name = ""

@@ -9,16 +9,16 @@ class Graph:
         self.x_values = dependency_array
         self.x_axes_label = dependency_array_name
         self.y_values = probability_of_blocking
-        self.__graphWindow()
+        self.__graph_window()
 
-    def __graphWindow(self):
+    def __graph_window(self):
         window = Tk()
         window.title('Probability of blocking')
         window.geometry("708x766")
-        self.__plotGraph(window)
+        self.__plot_graph(window)
         window.mainloop()
 
-    def __plotGraph(self, window):
+    def __plot_graph(self, window):
         figure = Figure(figsize=(7, 7), dpi=100)
         plot_graph = figure.add_subplot(111)
 
